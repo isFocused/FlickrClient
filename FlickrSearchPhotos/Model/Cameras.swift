@@ -9,7 +9,6 @@
 import Foundation
 
 struct Cameras: Codable {
-    
     let brand: String
     let camera: [Camera]
 }

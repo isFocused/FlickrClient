@@ -9,7 +9,6 @@
 import Foundation
 
 struct ContentName: Codable {
-    
     var content: String?
     
     enum CodingKeys: String, CodingKey {

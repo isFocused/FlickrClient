@@ -9,7 +9,6 @@
 import Foundation
 
 struct Camera: Codable {
-    
     let id: String
     let name: ContentName
     var images: Images?

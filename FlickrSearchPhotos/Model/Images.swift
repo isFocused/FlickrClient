@@ -9,7 +9,6 @@
 import Foundation
 
 struct Images: Codable{
-    
     let small: ContentName
     let large: ContentName
 }

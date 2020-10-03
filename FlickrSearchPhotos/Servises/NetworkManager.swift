@@ -10,7 +10,7 @@ import Foundation
 
 protocol Networking {
     func getSearchResult(requestText: String, completion: @escaping (Result<[Camera], Error>) -> ())
-    func getPhotosData(page: Int, dateString: String, completion: @escaping (Result<Photos, Error>) -> ())
+    func getPhotosData(page: Int, dateString: String?, completion: @escaping (Result<Photos, Error>) -> ())
 }
 
 class NetworkManager: Networking {
@@ -31,7 +31,8 @@ class NetworkManager: Networking {
         
     }
     
-    func getPhotosData(page: Int, dateString: String, completion: @escaping (Result<Photos, Error>) -> ()) {
+    func getPhotosData(page: Int, dateString: String?, completion: @escaping (Result<Photos, Error>) -> ()) {
+        guard let dateString = dateString else { return }
         let urlSring = "https://www.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=2b479eb67e7160d6f00edc43e766b02a&date=\(dateString)&per_page=20&page=\(page)&format=json&nojsoncallback=1"
         
         if let url = URL(string: urlSring) {

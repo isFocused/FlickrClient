@@ -11,9 +11,10 @@ import UIKit
 class Bulder {
     func createRootViewController() -> UIViewController {
         let network = NetworkManager()
+        let carentDate = CurentDateManager()
         
         return TabBarViewController(firstViewController: createSearchViewController(network),
-                             secondViewController: createPopularPhotosViewControler(network))
+                                    secondViewController: createPopularPhotosViewControler(network, carentDate: carentDate))
     }
     
     func createSearchViewController(_ network: Networking) -> UIViewController {
@@ -23,8 +24,8 @@ class Bulder {
         return UINavigationController(rootViewController: viewController)
     }
     
-    func createPopularPhotosViewControler(_ network: Networking) -> UIViewController {
-        let viewModel = PopularPhotosViewModel(network: network)
+    func createPopularPhotosViewControler(_ network: Networking, carentDate: CurentDateProtocol) -> UIViewController {
+        let viewModel = PopularPhotosViewModel(network: network, carentDate: carentDate)
         
         return UINavigationController(rootViewController: PopularPhotosViewControler(viewModel: viewModel))
     }

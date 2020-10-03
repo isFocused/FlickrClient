@@ -9,9 +9,9 @@
 import Foundation
 
 protocol PopularPhotosViewModelprotocol {
-    var currentDateString: String { get }
+    var currentDateString: String? { get }
     
-    init(network: Networking)
+    init(network: Networking, carentDate: CurentDateProtocol)
     
     func createCellViewModel(indexPath: IndexPath) -> PopularPhotoViewModelCellProtocol?
     func numberOfRowsInSection() -> Int
@@ -22,17 +22,19 @@ protocol PopularPhotosViewModelprotocol {
 
 class PopularPhotosViewModel: PopularPhotosViewModelprotocol {
     private var network: Networking?
+    private var carentDate: CurentDateProtocol?
     private var photos: [Photo]?
     private var viewModelsCells: [PopularPhotoViewModelCellProtocol]
     private var pages: Int
     private var carentPage: Int
     
-    var currentDateString: String {
-        createDateString()
+    var currentDateString: String? {
+        carentDate?.createStringDate()
     }
     
-    required init(network: Networking) {
+    required init(network: Networking, carentDate: CurentDateProtocol) {
         self.network = network
+        self.carentDate = carentDate
         pages = 0
         carentPage = 1
         viewModelsCells = []

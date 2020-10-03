@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9207FB3A2528AC4300B45285 /* CurentDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9207FB392528AC4300B45285 /* CurentDateManager.swift */; };
 		9236318624E80D9E006B4833 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236318524E80D9E006B4833 /* TabBarViewController.swift */; };
 		9236318824E81494006B4833 /* PopularPhotosViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236318724E81494006B4833 /* PopularPhotosViewControler.swift */; };
 		9236318A24E81F5B006B4833 /* PopularPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236318924E81F5B006B4833 /* PopularPhotoCollectionViewCell.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9207FB392528AC4300B45285 /* CurentDateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurentDateManager.swift; sourceTree = "<group>"; };
 		9236318524E80D9E006B4833 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9236318724E81494006B4833 /* PopularPhotosViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotosViewControler.swift; sourceTree = "<group>"; };
 		9236318924E81F5B006B4833 /* PopularPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				92E554C324D88570007AC641 /* NetworkManager.swift */,
+				9207FB392528AC4300B45285 /* CurentDateManager.swift */,
 			);
 			path = Servises;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				92FA20E624DEB7EB0044CBE5 /* SearchViewModelCell.swift in Sources */,
 				92E554AE24D88331007AC641 /* AppDelegate.swift in Sources */,
 				92E554B024D88331007AC641 /* SceneDelegate.swift in Sources */,
+				9207FB3A2528AC4300B45285 /* CurentDateManager.swift in Sources */,
 				92D6CBAE252764AD00EE27EA /* SearchDetailViewCell.swift in Sources */,
 				92CDC3F724D8AD0700A2D899 /* Camera.swift in Sources */,
 				926452A6252793340023F473 /* SearchViewCell.swift in Sources */,

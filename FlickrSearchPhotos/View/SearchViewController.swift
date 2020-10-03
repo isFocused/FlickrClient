@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class SearchViewController: UIViewController {
     
@@ -15,12 +16,11 @@ class SearchViewController: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
-        tableView.delegate = self
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
-        tableView.register(SearchDetailTableViewCell.self, forCellReuseIdentifier: SearchDetailTableViewCell.reuseIdentifaer)
-        tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.reuseIdentifaer)
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.register(SearchViewCell.self, forCellReuseIdentifier: SearchViewCell.reuseIdentifaer)
+        tableView.register(SearchDetailViewCell.self, forCellReuseIdentifier: SearchDetailViewCell.reuseIdentifaer)
         return tableView
     }()
     
@@ -33,7 +33,6 @@ class SearchViewController: UIViewController {
     
     lazy var activityIndicatorView: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.isHidden = true
         activityIndicator.hidesWhenStopped = true
         activityIndicator.style = .medium
@@ -70,21 +69,21 @@ class SearchViewController: UIViewController {
     
     private func setupTableView() {
         view.addSubview(tableView)
-        
-        tableView.fillView(view: view)
+        tableView.snp.makeConstraints { $0.top.bottom.trailing.leading.equalTo(0) }
     }
     
     private func setupActivityIndicatorView() {
         view.addSubview(activityIndicatorView)
-        
-        activityIndicatorView.setCenterConstraints(view: view)
+        activityIndicatorView.snp.makeConstraints { $0.center.equalTo(view) }
     }
     
     private func setupErrorLabel() {
         view.addSubview(errorLabel)
-        
-        errorLabel.setCenterConstraints(view: view)
-        errorLabel.setConstraints(leadingAnchor: view.leadingAnchor, trailingAnchor: view.trailingAnchor, paddingLeading: 16, paddingTrailing: 16)
+        errorLabel.snp.makeConstraints {
+            $0.center.equalTo(view)
+            $0.leading.equalTo(16)
+            $0.trailing.equalTo(-16)
+        }
     }
 }
 
@@ -96,15 +95,14 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let viewModelCell = viewModel.createCellViewModel(indexPath: indexPath) else { return UITableViewCell() }
         
-        if viewModelCell.isDetails {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SearchDetailTableViewCell.reuseIdentifaer, for: indexPath) as! SearchDetailTableViewCell
+        switch viewModelCell.isDetails {
+        case true:
+            let cell = tableView.dequeueReusableCell(withIdentifier: SearchDetailViewCell.reuseIdentifaer, for: indexPath) as! SearchDetailViewCell
             cell.viewModel = viewModelCell
-            
             return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.reuseIdentifaer, for: indexPath) as! SearchTableViewCell
+        case false:
+            let cell = tableView.dequeueReusableCell(withIdentifier: SearchViewCell.reuseIdentifaer, for: indexPath) as! SearchViewCell
             cell.viewModel = viewModelCell
-
             return cell
         }
     }

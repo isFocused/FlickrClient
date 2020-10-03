@@ -50,7 +50,7 @@ class PopularPhotosViewModel: PopularPhotosViewModelprotocol {
     }
     
     func getPhotos(completion: @escaping () -> ()) {
-        network?.getPhotosData(page: carentPage, dateString: currentDateString, completion: { [weak self] in
+        network?.getPhotosData(page: carentPage, dateString: createDateString(), completion: { [weak self] in
             switch $0 {
             case .success(let photoData):
                 self?.pages = photoData.pages
@@ -100,15 +100,23 @@ class PopularPhotosViewModel: PopularPhotosViewModelprotocol {
         let calendar = Calendar.current
         
         guard let yesterday = calendar.date(byAdding: .day, value: -1, to: Date()) else { return "" }
-        let components = calendar.dateComponents([.year, .month, .day], from: yesterday)
+    
+        return dateString(calendar.dateComponents([.year, .month, .day], from: yesterday))
+    }
+    
+    func dateString(_ components: DateComponents) -> String {
         guard let year = components.year, let month = components.month, let day = components.day else {
                 return ""
         }
         
-        if month < 10 {
-            return "\(String(describing: year))-0\(String(describing: month))-\(String(describing: day - 1))"
+        if month < 10 && day < 10 {
+            return "\(year)-0\(month)-0\(day)"
+        } else if month < 10 {
+            return "\(year)-0\(month)-\(day)"
+        } else if day < 10 {
+            return "\(year)-\(month)-0\(day)"
         } else {
-             return "\(String(describing: year))-\(String(describing: month))-\(String(describing: day))"
+            return "\(year)-\(month)-\(day)"
         }
     }
 }

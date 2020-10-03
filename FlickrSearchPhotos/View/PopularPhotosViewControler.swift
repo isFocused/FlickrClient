@@ -23,7 +23,10 @@ class PopularPhotosViewControler: UIViewController {
     }()
     
     private lazy var collageButtonItem: UIBarButtonItem = {
-        let barButtonitem = UIBarButtonItem(image: UIImage(named: "collage"), style: .done, target: self, action: #selector(pushCollageViewController))
+        let barButtonitem = UIBarButtonItem(image: #imageLiteral(resourceName: "collage"),
+                                            style: .done,
+                                            target: self,
+                                            action: #selector(pushCollageViewController))
         barButtonitem.isEnabled = false
         return barButtonitem
     }()

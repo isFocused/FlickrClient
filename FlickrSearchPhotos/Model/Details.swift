@@ -19,21 +19,21 @@ struct Details: Codable {
         case memoryType = "memory_type"
     }
     
-    func extractValues() -> [String: String] {
-        var distionary = [String: String]()
+    func extractValues() -> [String] {
+        var arrayStrings = [String]()
         
-        if let megapixel = megapixels?.content {
-            distionary["Megapixels:"] = megapixel
+        if let megapixelString = megapixels?.content {
+            arrayStrings.append(megapixelString)
         }
         
-        if let screenSize = lcdScreenSize?.content {
-            distionary["Screen size:"] = screenSize
+        if let screenSizeString = lcdScreenSize?.content {
+            arrayStrings.append(screenSizeString)
         }
         
-        if let memory = memoryType?.content {
-            distionary["Memory type:"] = memory
+        if let memoryString = memoryType?.content {
+            arrayStrings.append(memoryString)
         }
         
-        return distionary
+        return arrayStrings
     }
 }

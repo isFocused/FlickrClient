@@ -10,8 +10,11 @@
 		9236318624E80D9E006B4833 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236318524E80D9E006B4833 /* TabBarViewController.swift */; };
 		9236318824E81494006B4833 /* PopularPhotosViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236318724E81494006B4833 /* PopularPhotosViewControler.swift */; };
 		9236318A24E81F5B006B4833 /* PopularPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236318924E81F5B006B4833 /* PopularPhotoCollectionViewCell.swift */; };
+		923850C52525FA8800285BCA /* UITabBarController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923850C42525FA8800285BCA /* UITabBarController+Extension.swift */; };
+		923850C82526165500285BCA /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923850C72526165500285BCA /* UIStackView+Extension.swift */; };
 		9247DB0124E9DBDD006A6550 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9247DB0024E9DBDD006A6550 /* Kingfisher */; };
 		925CB60F2525377100705252 /* CastomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CB60E2525377100705252 /* CastomStackView.swift */; };
+		926452A6252793340023F473 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926452A5252793340023F473 /* SearchViewCell.swift */; };
 		927272AC2524902800A7A0A9 /* CastomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927272AB2524902800A7A0A9 /* CastomScrollView.swift */; };
 		928862692523F28E00F64233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928862682523F28E00F64233 /* Assets.xcassets */; };
 		92A1A92324E823B60008356C /* PopularPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1A92224E823B60008356C /* PopularPhotosViewModel.swift */; };
@@ -29,14 +32,14 @@
 		92CDC3F924D8AD2400A2D899 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC3F824D8AD2400A2D899 /* Details.swift */; };
 		92CDC3FB24D8AD3F00A2D899 /* ContentName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC3FA24D8AD3F00A2D899 /* ContentName.swift */; };
 		92CDC3FD24D8AD5700A2D899 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDC3FC24D8AD5700A2D899 /* Images.swift */; };
+		92D6CBAE252764AD00EE27EA /* SearchDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D6CBAD252764AD00EE27EA /* SearchDetailViewCell.swift */; };
+		92D6CBB22527656E00EE27EA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92D6CBB12527656E00EE27EA /* SnapKit */; };
 		92E554AE24D88331007AC641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E554AD24D88331007AC641 /* AppDelegate.swift */; };
 		92E554B024D88331007AC641 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E554AF24D88331007AC641 /* SceneDelegate.swift */; };
 		92E554B224D88331007AC641 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E554B124D88331007AC641 /* SearchViewController.swift */; };
 		92E554BA24D88335007AC641 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E554B824D88335007AC641 /* LaunchScreen.storyboard */; };
 		92E554C224D88401007AC641 /* JsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E554C124D88401007AC641 /* JsonData.swift */; };
 		92E554C424D88570007AC641 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E554C324D88570007AC641 /* NetworkManager.swift */; };
-		92E554C624D8A913007AC641 /* SearchDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E554C524D8A913007AC641 /* SearchDetailTableViewCell.swift */; };
-		92E554CC24D8ABFD007AC641 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E554CB24D8ABFD007AC641 /* SearchTableViewCell.swift */; };
 		92FA20E424DEB6B10044CBE5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA20E324DEB6B10044CBE5 /* SearchViewModel.swift */; };
 		92FA20E624DEB7EB0044CBE5 /* SearchViewModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FA20E524DEB7EB0044CBE5 /* SearchViewModelCell.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +48,10 @@
 		9236318524E80D9E006B4833 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9236318724E81494006B4833 /* PopularPhotosViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotosViewControler.swift; sourceTree = "<group>"; };
 		9236318924E81F5B006B4833 /* PopularPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		923850C42525FA8800285BCA /* UITabBarController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extension.swift"; sourceTree = "<group>"; };
+		923850C72526165500285BCA /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		925CB60E2525377100705252 /* CastomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastomStackView.swift; sourceTree = "<group>"; };
+		926452A5252793340023F473 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		927272AB2524902800A7A0A9 /* CastomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastomScrollView.swift; sourceTree = "<group>"; };
 		928862682523F28E00F64233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92A1A92224E823B60008356C /* PopularPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotosViewModel.swift; sourceTree = "<group>"; };
@@ -63,6 +69,7 @@
 		92CDC3F824D8AD2400A2D899 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		92CDC3FA24D8AD3F00A2D899 /* ContentName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentName.swift; sourceTree = "<group>"; };
 		92CDC3FC24D8AD5700A2D899 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		92D6CBAD252764AD00EE27EA /* SearchDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewCell.swift; sourceTree = "<group>"; };
 		92E554AA24D88331007AC641 /* FlickrSearchPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrSearchPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E554AD24D88331007AC641 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E554AF24D88331007AC641 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,8 +78,6 @@
 		92E554BB24D88335007AC641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92E554C124D88401007AC641 /* JsonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonData.swift; sourceTree = "<group>"; };
 		92E554C324D88570007AC641 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		92E554C524D8A913007AC641 /* SearchDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailTableViewCell.swift; sourceTree = "<group>"; };
-		92E554CB24D8ABFD007AC641 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		92FA20E324DEB6B10044CBE5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		92FA20E524DEB7EB0044CBE5 /* SearchViewModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9247DB0124E9DBDD006A6550 /* Kingfisher in Frameworks */,
+				92D6CBB22527656E00EE27EA /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				92BDA61E25253442008F75F2 /* UIImage+Extension.swift */,
+				923850C42525FA8800285BCA /* UITabBarController+Extension.swift */,
+				923850C72526165500285BCA /* UIStackView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -159,8 +167,8 @@
 				92E554B124D88331007AC641 /* SearchViewController.swift */,
 				9236318724E81494006B4833 /* PopularPhotosViewControler.swift */,
 				92AA73A324EC784600A25F90 /* CollageViewController.swift */,
-				92BD01B624EC91E400ED64A5 /* CastomView */,
 				92FA20E224DEB6920044CBE5 /* Cell */,
+				92BD01B624EC91E400ED64A5 /* CastomView */,
 				92BDA621252534E5008F75F2 /* Extension */,
 			);
 			path = View;
@@ -193,8 +201,8 @@
 		92FA20E224DEB6920044CBE5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				92E554C524D8A913007AC641 /* SearchDetailTableViewCell.swift */,
-				92E554CB24D8ABFD007AC641 /* SearchTableViewCell.swift */,
+				926452A5252793340023F473 /* SearchViewCell.swift */,
+				92D6CBAD252764AD00EE27EA /* SearchDetailViewCell.swift */,
 				9236318924E81F5B006B4833 /* PopularPhotoCollectionViewCell.swift */,
 			);
 			path = Cell;
@@ -218,6 +226,7 @@
 			name = FlickrSearchPhotos;
 			packageProductDependencies = (
 				9247DB0024E9DBDD006A6550 /* Kingfisher */,
+				92D6CBB12527656E00EE27EA /* SnapKit */,
 			);
 			productName = FlickrSearchPhotos;
 			productReference = 92E554AA24D88331007AC641 /* FlickrSearchPhotos.app */;
@@ -249,6 +258,7 @@
 			mainGroup = 92E554A124D88331007AC641;
 			packageReferences = (
 				9247DAFF24E9DBDD006A6550 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				92D6CBB02527656E00EE27EA /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 92E554AB24D88331007AC641 /* Products */;
 			projectDirPath = "";
@@ -284,27 +294,29 @@
 				92E554C224D88401007AC641 /* JsonData.swift in Sources */,
 				92AA73A424EC784600A25F90 /* CollageViewController.swift in Sources */,
 				92E554C424D88570007AC641 /* NetworkManager.swift in Sources */,
-				92E554C624D8A913007AC641 /* SearchDetailTableViewCell.swift in Sources */,
 				92B30BAE24DF369F00B84DA3 /* Bulder.swift in Sources */,
 				92A1A92324E823B60008356C /* PopularPhotosViewModel.swift in Sources */,
 				92FA20E424DEB6B10044CBE5 /* SearchViewModel.swift in Sources */,
 				92CDC3F524D8ACF100A2D899 /* Cameras.swift in Sources */,
 				92BD01BA24ECA21500ED64A5 /* CollageViewModel.swift in Sources */,
-				92E554CC24D8ABFD007AC641 /* SearchTableViewCell.swift in Sources */,
 				92BDA61F25253442008F75F2 /* UIImage+Extension.swift in Sources */,
 				9236318A24E81F5B006B4833 /* PopularPhotoCollectionViewCell.swift in Sources */,
 				9236318624E80D9E006B4833 /* TabBarViewController.swift in Sources */,
 				92A1A92924E83AAE0008356C /* JsonPhotoData.swift in Sources */,
 				92CDC3F924D8AD2400A2D899 /* Details.swift in Sources */,
+				923850C82526165500285BCA /* UIStackView+Extension.swift in Sources */,
 				925CB60F2525377100705252 /* CastomStackView.swift in Sources */,
 				92CA9F0624DF1C5800ACD8B1 /* ExtensionUIView.swift in Sources */,
 				92A1A92724E839950008356C /* Photos.swift in Sources */,
+				923850C52525FA8800285BCA /* UITabBarController+Extension.swift in Sources */,
 				92CDC3FB24D8AD3F00A2D899 /* ContentName.swift in Sources */,
 				92A1A92B24E83B310008356C /* PopularPhotoViewModelCell.swift in Sources */,
 				92FA20E624DEB7EB0044CBE5 /* SearchViewModelCell.swift in Sources */,
 				92E554AE24D88331007AC641 /* AppDelegate.swift in Sources */,
 				92E554B024D88331007AC641 /* SceneDelegate.swift in Sources */,
+				92D6CBAE252764AD00EE27EA /* SearchDetailViewCell.swift in Sources */,
 				92CDC3F724D8AD0700A2D899 /* Camera.swift in Sources */,
+				926452A6252793340023F473 /* SearchViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +520,14 @@
 				minimumVersion = 5.14.1;
 			};
 		};
+		92D6CBB02527656E00EE27EA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -515,6 +535,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9247DAFF24E9DBDD006A6550 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		92D6CBB12527656E00EE27EA /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92D6CBB02527656E00EE27EA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

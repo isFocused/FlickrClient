@@ -12,13 +12,31 @@ import Kingfisher
 class CollageViewController: UIViewController {
 
     var viewModel: CollageViewModelProtocol!
-
+    
     var scrollView: CastomScrollView!
+    var isHiddenStatusBar = false
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+        .none
+    }
+    
+    override var prefersStatusBarHidden: Bool{
+        isHiddenStatusBar
+    }
+    
+    lazy var haidTap: UITapGestureRecognizer = {
+        let zoomingTap = UITapGestureRecognizer(target: self, action: #selector(hiddenToolbars))
+        zoomingTap.numberOfTapsRequired = 1
+        return zoomingTap
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView = CastomScrollView(image: getImageInCashe(), frame: view.bounds)
-        view.backgroundColor = .blue
+        scrollView.addGestureRecognizer(haidTap)
+        view.backgroundColor = .systemBackground
+        
+        haidTap.require(toFail: scrollView.zoomingTap)
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,5 +65,17 @@ class CollageViewController: UIViewController {
         }
         
         return UIImage.collage(images: images, size: CGSize(width: 1280, height: 932))
+    }
+    
+    @objc func hiddenToolbars() {
+        if !isHiddenStatusBar {
+            navigationController?.setNavigationBarHidden(true, animated: true)
+            tabBarController?.setTabBarHidden(true, animated: true)
+            isHiddenStatusBar = false
+        } else {
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            tabBarController?.setTabBarHidden(false, animated: true)
+            isHiddenStatusBar = true
+        }
     }
 }

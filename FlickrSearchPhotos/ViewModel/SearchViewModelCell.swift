@@ -12,9 +12,15 @@ protocol SearchViewModelCellProtocol {
     var name: String? { get }
     var imageString: String? { get }
     var isDetails: Bool { get }
-    var details: [String: String] { get }
+    var detailModel: DetailViewModel { get }
     
     init(camera: Camera)
+}
+
+struct DetailViewModel {
+    let titleMemoryType: String?
+    let titleLcdScreenSize: String?
+    let titleMegapixels: String?
 }
 
 class SearchViewModelCell: SearchViewModelCellProtocol {
@@ -25,19 +31,17 @@ class SearchViewModelCell: SearchViewModelCellProtocol {
     }
     
     var imageString: String? {
-        if camera.images?.large != nil {
-            return camera.images?.large.content
-        } else {
-            return camera.images?.small.content
-        }
+        camera.images?.large != nil ? camera.images?.large.content : camera.images?.small.content
     }
     
     var isDetails: Bool {
         camera.details != nil ? true : false
     }
     
-    var details: [String: String] {
-        camera.details?.extractValues() ?? [String: String]()
+    var detailModel: DetailViewModel {
+        DetailViewModel(titleMemoryType: camera.details?.memoryType?.content,
+                        titleLcdScreenSize: camera.details?.lcdScreenSize?.content,
+                        titleMegapixels: camera.details?.megapixels?.content)
     }
     
     required init(camera: Camera) {

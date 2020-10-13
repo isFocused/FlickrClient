@@ -32,7 +32,7 @@ class SearchViewModel: SearchViewModelProtocol {
     
     func search(requestText: String?, completion: @escaping (Bool) -> ()) {
         guard let text = requestText else { return }
-        network?.getSearchResult(requestText: text, completion: { [weak self] in
+        network?.getSearchResult(endpoint: Endpoint(.getBrandModels, brand: text), completion: { [weak self] in
             switch $0 {
             case .failure(let error):
                 self?.errorString = error.localizedDescription

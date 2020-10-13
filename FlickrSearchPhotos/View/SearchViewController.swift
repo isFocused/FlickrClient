@@ -127,6 +127,7 @@ extension SearchViewController: UISearchBarDelegate {
                 }
             case false:
                 DispatchQueue.main.async {
+                    self?.tableView.reloadData()
                     self?.errorLabel.text = self?.viewModel.errorString
                     self?.activityIndicatorView.stopAnimating()
                     self?.errorLabel.isHidden = false

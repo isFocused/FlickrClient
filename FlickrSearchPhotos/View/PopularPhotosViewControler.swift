@@ -31,6 +31,14 @@ class PopularPhotosViewControler: UIViewController {
         return barButtonitem
     }()
     
+    lazy var errorLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.isHidden = true
+        label.textAlignment = .center
+        return label
+    }()
+    
     private var spacing: CGFloat = 5
     private var numberOfItemsPerRow: CGFloat = 2
     private var spacingBetweenCells: CGFloat = 5
@@ -64,6 +72,15 @@ class PopularPhotosViewControler: UIViewController {
         collectionView.fillView(view: view)
     }
     
+    private func setupErrorLabel() {
+        view.addSubview(errorLabel)
+        errorLabel.snp.makeConstraints {
+            $0.center.equalTo(view)
+            $0.leading.equalTo(16)
+            $0.trailing.equalTo(-16)
+        }
+    }
+    
     @objc private func pushCollageViewController() {
         let viewController = CollageViewController()
         viewController.viewModel = viewModel.createCollageViewModel()
@@ -87,7 +104,8 @@ extension PopularPhotosViewControler: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         indexPaths.forEach { indexPath in
             viewModel.getNewPhotos(indexPath: indexPath) {
-                ImagePrefetcher(urls: $0).start()
+                guard let urls = $0 else { return }
+                ImagePrefetcher(urls: urls).start()
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }

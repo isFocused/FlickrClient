@@ -23,4 +23,8 @@ class PopularPhotoViewModelCell: PopularPhotoViewModelCellProtocol {
     required init(photo: Photo) {
         self.photo = photo
     }
+    
+//    private func createUrl(in photo: Photo) -> URL? {
+//        URL(string: <#T##String#>)
+//    }
 }

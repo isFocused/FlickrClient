@@ -9,14 +9,14 @@
 import Foundation
 
 protocol PopularPhotosViewModelprotocol {
-    var currentDateString: String? { get }
+    var errorString: String? { get set }
     
     init(network: Networking, carentDate: CurentDateProtocol)
     
     func createCellViewModel(indexPath: IndexPath) -> PopularPhotoViewModelCellProtocol?
     func numberOfRowsInSection() -> Int
     func getPhotos(completion: @escaping () -> ())
-    func getNewPhotos(indexPath: IndexPath, completion: @escaping ([URL]) -> ())
+    func getNewPhotos(indexPath: IndexPath, completion: @escaping ([URL]?) -> ())
     func createCollageViewModel() -> CollageViewModel
 }
 
@@ -25,17 +25,17 @@ class PopularPhotosViewModel: PopularPhotosViewModelprotocol {
     private var carentDate: CurentDateProtocol?
     private var photos: [Photo]?
     private var viewModelsCells: [PopularPhotoViewModelCellProtocol]
-    private var pages: Int
     private var carentPage: Int
     
-    var currentDateString: String? {
-        carentDate?.createStringDate()
+    var errorString: String?
+    
+    var currentDateString: String {
+        carentDate?.createStringDate() ?? ""
     }
     
     required init(network: Networking, carentDate: CurentDateProtocol) {
         self.network = network
         self.carentDate = carentDate
-        pages = 0
         carentPage = 1
         viewModelsCells = []
     }
@@ -48,14 +48,14 @@ class PopularPhotosViewModel: PopularPhotosViewModelprotocol {
     }
     
     func numberOfRowsInSection() -> Int {
-        photos?.count ?? 8
+        photos?.count ?? 0
     }
     
     func getPhotos(completion: @escaping () -> ()) {
-        network?.getPhotosData(page: carentPage, dateString: createDateString(), completion: { [weak self] in
+        let endPoint = Endpoint(.getList, dateString: currentDateString, page: "\(carentPage)")
+        network?.getPhotosData(endpoint: endPoint, completion: { [weak self] in
             switch $0 {
             case .success(let photoData):
-                self?.pages = photoData.pages
                 self?.carentPage = photoData.page
                 self?.photos = photoData.photo
                 completion()
@@ -65,22 +65,19 @@ class PopularPhotosViewModel: PopularPhotosViewModelprotocol {
         })
     }
     
-    func getNewPhotos(indexPath: IndexPath, completion: @escaping ([URL]) -> ()) {
+    func getNewPhotos(indexPath: IndexPath, completion: @escaping ([URL]?) -> ()) {
         
         if photos!.count - 1 != indexPath.item {
             return
         } else {
-            network?.getPhotosData(page: carentPage + 1, dateString: currentDateString, completion: { [weak self] in
+            let endPoint = Endpoint(.getList, dateString: currentDateString, page: "\(carentPage + 1)")
+            network?.getPhotosData(endpoint: endPoint, completion: { [weak self] in
                 switch $0 {
                 case .success(let photoData):
-                    self?.pages = photoData.pages
                     self?.carentPage = photoData.page
                     self?.photos?.append(contentsOf: photoData.photo ?? [])
-                    var urls = [URL]()
-                    photoData.photo?.forEach {
-                        urls.append(URL(string: "https://farm\($0.farm).staticflickr.com/\($0.server)/\($0.id)_\($0.secret)_z.jpg")!)
-                    }
-                    completion(urls)
+                    let urlPhotos = photoData.photo?.map { URL(string: "https://farm\($0.farm).staticflickr.com/\($0.server)/\($0.id)_\($0.secret)_z.jpg")! }
+                    completion(urlPhotos)
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
@@ -96,29 +93,5 @@ class PopularPhotosViewModel: PopularPhotosViewModelprotocol {
             }
         }
         return CollageViewModel(urlsPhotos: urlsImages)
-    }
-    
-    private func createDateString() -> String {
-        let calendar = Calendar.current
-        
-        guard let yesterday = calendar.date(byAdding: .day, value: -1, to: Date()) else { return "" }
-    
-        return dateString(calendar.dateComponents([.year, .month, .day], from: yesterday))
-    }
-    
-    func dateString(_ components: DateComponents) -> String {
-        guard let year = components.year, let month = components.month, let day = components.day else {
-                return ""
-        }
-        
-        if month < 10 && day < 10 {
-            return "\(year)-0\(month)-0\(day)"
-        } else if month < 10 {
-            return "\(year)-0\(month)-\(day)"
-        } else if day < 10 {
-            return "\(year)-\(month)-0\(day)"
-        } else {
-            return "\(year)-\(month)-\(day)"
-        }
     }
 }

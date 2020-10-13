@@ -26,17 +26,8 @@ class PopularPhotoCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    var spiner: UIActivityIndicatorView = {
-        let spiner = UIActivityIndicatorView(style: .large)
-        spiner.hidesWhenStopped = true
-        spiner.startAnimating()
-        return spiner
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .systemGray
-        setupSpiner()
         setupImageView()
     }
     
@@ -58,11 +49,5 @@ class PopularPhotoCollectionViewCell: UICollectionViewCell {
     private func setupImageView() {
         addSubview(imageView)
         imageView.fillView(view: self)
-    }
-    
-    private func setupSpiner() {
-        addSubview(spiner)
-        spiner.setCenterConstraints(view: self)
-        spiner.startAnimating()
     }
 }

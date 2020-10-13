@@ -18,6 +18,8 @@
 		926452A6252793340023F473 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926452A5252793340023F473 /* SearchViewCell.swift */; };
 		927272AC2524902800A7A0A9 /* CastomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927272AB2524902800A7A0A9 /* CastomScrollView.swift */; };
 		928862692523F28E00F64233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 928862682523F28E00F64233 /* Assets.xcassets */; };
+		929BE28F252A8F4500FC26C0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BE28E252A8F4500FC26C0 /* API.swift */; };
+		929BE293252A8F6000FC26C0 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BE292252A8F6000FC26C0 /* Endpoint.swift */; };
 		92A1A92324E823B60008356C /* PopularPhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1A92224E823B60008356C /* PopularPhotosViewModel.swift */; };
 		92A1A92524E839100008356C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1A92424E839100008356C /* Photo.swift */; };
 		92A1A92724E839950008356C /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1A92624E839950008356C /* Photos.swift */; };
@@ -56,6 +58,8 @@
 		926452A5252793340023F473 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		927272AB2524902800A7A0A9 /* CastomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastomScrollView.swift; sourceTree = "<group>"; };
 		928862682523F28E00F64233 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		929BE28E252A8F4500FC26C0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		929BE292252A8F6000FC26C0 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		92A1A92224E823B60008356C /* PopularPhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotosViewModel.swift; sourceTree = "<group>"; };
 		92A1A92424E839100008356C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		92A1A92624E839950008356C /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
@@ -97,6 +101,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		929BE28D252A8F1A00FC26C0 /* NetworkServis */ = {
+			isa = PBXGroup;
+			children = (
+				92E554C324D88570007AC641 /* NetworkManager.swift */,
+				929BE292252A8F6000FC26C0 /* Endpoint.swift */,
+				929BE28E252A8F4500FC26C0 /* API.swift */,
+			);
+			path = NetworkServis;
+			sourceTree = "<group>";
+		};
 		92BD01B624EC91E400ED64A5 /* CastomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +209,7 @@
 		92E554CA24D8AADA007AC641 /* Servises */ = {
 			isa = PBXGroup;
 			children = (
-				92E554C324D88570007AC641 /* NetworkManager.swift */,
+				929BE28D252A8F1A00FC26C0 /* NetworkServis */,
 				9207FB392528AC4300B45285 /* CurentDateManager.swift */,
 			);
 			path = Servises;
@@ -311,6 +325,7 @@
 				925CB60F2525377100705252 /* CastomStackView.swift in Sources */,
 				92CA9F0624DF1C5800ACD8B1 /* ExtensionUIView.swift in Sources */,
 				92A1A92724E839950008356C /* Photos.swift in Sources */,
+				929BE28F252A8F4500FC26C0 /* API.swift in Sources */,
 				923850C52525FA8800285BCA /* UITabBarController+Extension.swift in Sources */,
 				92CDC3FB24D8AD3F00A2D899 /* ContentName.swift in Sources */,
 				92A1A92B24E83B310008356C /* PopularPhotoViewModelCell.swift in Sources */,
@@ -320,6 +335,7 @@
 				9207FB3A2528AC4300B45285 /* CurentDateManager.swift in Sources */,
 				92D6CBAE252764AD00EE27EA /* SearchDetailViewCell.swift in Sources */,
 				92CDC3F724D8AD0700A2D899 /* Camera.swift in Sources */,
+				929BE293252A8F6000FC26C0 /* Endpoint.swift in Sources */,
 				926452A6252793340023F473 /* SearchViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
